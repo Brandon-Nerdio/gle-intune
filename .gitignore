@@ -1,0 +1,5 @@
+# Local extract / conversion scratch — never sync to Nerdio
+_staging/
+*.zip
+.DS_Store
+Thumbs.db
