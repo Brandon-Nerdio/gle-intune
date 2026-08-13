@@ -1,7 +1,7 @@
 {
     "@odata.type":  "#microsoft.graph.conditionalAccessPolicy",
     "displayName":  "CE-UAC-CA-003 - Require multifactor authentication for admins",
-    "state":  "disabled",
+    "state":  "enabledForReportingButNotEnforced",
     "conditions":  {
                        "applications":  {
                                             "includeApplications":  [
