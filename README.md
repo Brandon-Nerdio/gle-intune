@@ -38,14 +38,29 @@ Policy folders use the **display name** as the folder name. Tags live in `policy
 1. MSP level → **System** → **Integrations** → **GitHub Repositories** → **Link Repository**
 2. Account: `Brandon-Nerdio`
 3. Repository: `gle-intune`
-4. Path: `/policies-versioning`
-5. Branch: `main`
-6. File extensions: `.json`
-7. File content: **Intune Policies Versioning** (or Intune device configuration policy)
-8. Include subfolders: **on**
-9. Auto-synchronization: on (or refresh manually after pushes)
+4. Enable the **Intune Policies Versioning** toggle at the bottom of the form (next to *Auto-synchronization*). This is a form-level switch, **not** an option in the *File content* dropdown.
+5. Add **one mapping row per populated framework folder**:
 
-After this restructure, refresh the GitHub sync once so Nerdio re-indexes paths under each framework folder.
+| Path | Branch | File extensions | File content | Include subfolders |
+|---|---|---|---|---|
+| `/policies-versioning/cyber-essentials` | `main` | `.json` | Intune Device Configuration policy | on |
+| `/policies-versioning/microsoft-defender` | `main` | `.json` | Intune Device Configuration policy | on |
+
+6. Auto-synchronization: on (or refresh manually after pushes)
+
+### Why the Path points at the framework, not the repo root
+
+Nerdio's versioning parser expects exactly three levels below the configured Path:
+
+```
+<Path>/<policy-type>/<policy-name>/<version>_<policy-name>.json
+```
+
+This repo adds a `<framework>` level above `<policy-type>`, so pointing Path at `/policies-versioning` makes Nerdio read `cyber-essentials` as the policy type and `compliance-policies` as the policy name. Policies then sync with **blank names**. Setting Path to the framework folder realigns the three levels.
+
+Add a new mapping row as each remaining framework folder gets its first policy.
+
+Do **not** add a second mapping row over the same path with a different *File content* type (e.g. *Windows script*) — that ingests every policy JSON twice and produces duplicate or junk entries.
 
 ## Adding a policy
 
