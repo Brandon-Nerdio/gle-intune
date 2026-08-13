@@ -1,17 +1,8 @@
 {
-    "@odata.context":  "https://graph.microsoft.com/beta/$metadata#identity/conditionalAccess/policies/$entity",
     "@odata.type":  "#microsoft.graph.conditionalAccessPolicy",
-    "@odata.id":  "identity/conditionalAccess/policies(\u0027ed35f967-b9a7-4bc6-ab21-cea4ea45afee\u0027)",
-    "@odata.editLink":  "identity/conditionalAccess/policies(\u0027ed35f967-b9a7-4bc6-ab21-cea4ea45afee\u0027)",
-    "id":  "ed35f967-b9a7-4bc6-ab21-cea4ea45afee",
-    "templateId":  null,
     "displayName":  "CE-UAC-CA-002 - Require multifactor authentication for all users",
-    "createdDateTime@odata.type":  "#DateTimeOffset",
-    "createdDateTime":  "2026-05-18T20:51:32.4565095Z",
-    "modifiedDateTime":  null,
     "state@odata.type":  "#microsoft.graph.conditionalAccessPolicyState",
     "state":  "disabled",
-    "deletedDateTime":  null,
     "partialEnablementStrategy":  null,
     "sessionControls":  null,
     "conditions":  {
@@ -63,6 +54,7 @@
                                                       ],
                                      "excludeUsers@odata.type":  "#Collection(String)",
                                      "excludeUsers":  [
+
                                                       ],
                                      "includeGroups@odata.type":  "#Collection(String)",
                                      "includeGroups":  [
@@ -99,13 +91,6 @@
                           "termsOfUse":  [
 
                                          ],
-                          "authenticationStrength@odata.context":  "https://graph.microsoft.com/beta/$metadata#identity/conditionalAccess/policies(\u0027ed35f967-b9a7-4bc6-ab21-cea4ea45afee\u0027)/grantControls/authenticationStrength/$entity",
-                          "authenticationStrength@odata.associationLink":  "https://graph.microsoft.com/beta/identity/conditionalAccess/policies(\u0027ed35f967-b9a7-4bc6-ab21-cea4ea45afee\u0027)/grantControls/authenticationStrength/$ref",
-                          "authenticationStrength@odata.navigationLink":  "https://graph.microsoft.com/beta/identity/conditionalAccess/policies(\u0027ed35f967-b9a7-4bc6-ab21-cea4ea45afee\u0027)/grantControls/authenticationStrength",
                           "authenticationStrength":  null
-                      },
-    "#microsoft.graph.restore":  {
-                                     "title":  "microsoft.graph.restore",
-                                     "target":  "https://graph.microsoft.com/beta/identity/conditionalAccess/policies(\u0027ed35f967-b9a7-4bc6-ab21-cea4ea45afee\u0027)/microsoft.graph.restore"
-                                 }
+                      }
 }
