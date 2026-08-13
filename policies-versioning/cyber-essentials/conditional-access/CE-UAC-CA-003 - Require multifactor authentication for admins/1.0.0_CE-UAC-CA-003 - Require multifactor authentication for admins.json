@@ -5,7 +5,7 @@
     "@odata.editLink":  "identity/conditionalAccess/policies(\u002723a570bb-0770-4f27-9d5a-e45352365953\u0027)",
     "id":  "23a570bb-0770-4f27-9d5a-e45352365953",
     "templateId":  null,
-    "displayName":  " CE-UAC-CA-003 - Require multifactor authentication for admins",
+    "displayName":  "CE-UAC-CA-003 - Require multifactor authentication for admins",
     "createdDateTime@odata.type":  "#DateTimeOffset",
     "createdDateTime":  "2026-05-18T20:53:11.2056263Z",
     "modifiedDateTime":  null,
