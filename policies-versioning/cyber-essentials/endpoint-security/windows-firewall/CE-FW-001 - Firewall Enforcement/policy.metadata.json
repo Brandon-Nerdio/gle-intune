@@ -3,6 +3,7 @@
                  "cyber-essentials",
                  "ce",
                  "endpoint-security",
-                 "sc"
+                 "windows-firewall",
+                 "fw"
              ]
 }

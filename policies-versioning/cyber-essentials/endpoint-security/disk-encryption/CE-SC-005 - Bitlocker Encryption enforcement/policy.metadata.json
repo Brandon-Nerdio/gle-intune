@@ -3,6 +3,7 @@
                  "cyber-essentials",
                  "ce",
                  "endpoint-security",
-                 "mp"
+                 "disk-encryption",
+                 "sc"
              ]
 }
