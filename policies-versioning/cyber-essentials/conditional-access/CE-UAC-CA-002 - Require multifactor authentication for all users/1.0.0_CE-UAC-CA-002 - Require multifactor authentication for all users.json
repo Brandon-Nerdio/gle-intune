@@ -63,7 +63,6 @@
                                                       ],
                                      "excludeUsers@odata.type":  "#Collection(String)",
                                      "excludeUsers":  [
-                                                          "ed07140e-7d36-450c-badb-2a5b19469854"
                                                       ],
                                      "includeGroups@odata.type":  "#Collection(String)",
                                      "includeGroups":  [
