@@ -14,6 +14,7 @@ row and its own folder.
 | `/policies-versioning/cyber-essentials/compliance-policies` | Intune Compliance policy |
 | `/policies-versioning/cyber-essentials/conditional-access` | Intune Conditional Access policy |
 | `/policies-versioning/cyber-essentials/device-configuration-policies` | Intune Device Configuration policy |
+| `/policies-versioning/cyber-essentials/update-rings` | Intune Device Configuration policy |
 | `/policies-versioning/cyber-essentials/endpoint-security/windows-firewall` | Intune Windows firewall policies |
 | `/policies-versioning/cyber-essentials/endpoint-security/firewall-rules` | Intune Windows Firewall Rules Policies |
 | `/policies-versioning/cyber-essentials/endpoint-security/asr-rules` | Intune Attack surface reduction rules policies |
@@ -25,14 +26,13 @@ Set **Intune Policies Versioning** on each row, with file mask `.json`, branch `
 and **Include subfolders** enabled. Do not map the Cyber Essentials root or the
 `endpoint-security` parent: those paths contain multiple incompatible policy types.
 
-### Policies that cannot use GitHub sync
+### Update rings
 
-The two Windows Update rings use the
-`windowsUpdateForBusinessConfiguration` schema. Nerdio's GitHub integration does not
-offer a Windows Update ring file-content parser. Do **not** map them as Intune Device
-Configuration policy or Defender Update Controls. Import them through Nerdio's
-**Policies > Security > Update Rings** workflow instead. Their source JSON remains under
-`manual-import/update-rings` for controlled manual import.
+The two Windows Update rings use the `windowsUpdateForBusinessConfiguration` schema.
+The File content dropdown has no explicit update-ring entry, but Nerdio auto-detects the
+ring schema on ingestion and classifies these as **Windows Update Rings Policy**. Map the
+`update-rings` path as **Intune Device Configuration policy** on its own row (paths must
+be unique; content types may repeat).
 
 **CE-FW-001 vs CE-FW-002:** the JSON templates differ — CE-FW-001 is the *Windows
 Firewall* config profile (**Intune Windows firewall policies**) while CE-FW-002 is a
@@ -52,7 +52,7 @@ underlying settings-catalog payload reliably.
 | `compliance-policies` | Antivirus/firewall, password, minimum OS |
 | `conditional-access` | MFA, legacy auth block, compliant / Entra-joined device gates |
 | `device-configuration-policies` | Password policy (legacy device config) |
-| `manual-import/update-rings` | CE-PM-001 pilot and CE-PM-002 standard Windows Update rings (not GitHub-synced) |
+| `update-rings` | CE-PM-001 pilot and CE-PM-002 standard Windows Update rings |
 | `endpoint-security/windows-firewall` | CE-FW-001 firewall enforcement (Windows Firewall config) |
 | `endpoint-security/firewall-rules` | CE-FW-002 inbound RDP block (Windows Firewall Rules) |
 | `endpoint-security/asr-rules` | CE-MP-002 ASR audit and block modes |
