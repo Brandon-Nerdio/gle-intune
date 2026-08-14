@@ -14,7 +14,7 @@ row and its own folder.
 | `/policies-versioning/cyber-essentials/compliance-policies` | Intune Compliance policy |
 | `/policies-versioning/cyber-essentials/conditional-access` | Intune Conditional Access policy |
 | `/policies-versioning/cyber-essentials/device-configuration-policies` | Intune Device Configuration policy |
-| `/policies-versioning/cyber-essentials/update-rings` | Intune Device Configuration policy |
+| `/policies-versioning/cyber-essentials/update-rings` | Intune Windows Update Rings Policies |
 | `/policies-versioning/cyber-essentials/endpoint-security/windows-firewall` | Intune Windows firewall policies |
 | `/policies-versioning/cyber-essentials/endpoint-security/firewall-rules` | Intune Windows Firewall Rules Policies |
 | `/policies-versioning/cyber-essentials/endpoint-security/asr-rules` | Intune Attack surface reduction rules policies |
@@ -28,11 +28,8 @@ and **Include subfolders** enabled. Do not map the Cyber Essentials root or the
 
 ### Update rings
 
-The two Windows Update rings use the `windowsUpdateForBusinessConfiguration` schema.
-The File content dropdown has no explicit update-ring entry, but Nerdio auto-detects the
-ring schema on ingestion and classifies these as **Windows Update Rings Policy**. Map the
-`update-rings` path as **Intune Device Configuration policy** on its own row (paths must
-be unique; content types may repeat).
+The two Windows Update rings use the `windowsUpdateForBusinessConfiguration` schema and
+sync through their own row mapped as **Intune Windows Update Rings Policies**.
 
 **CE-FW-001 vs CE-FW-002:** the JSON templates differ — CE-FW-001 is the *Windows
 Firewall* config profile (**Intune Windows firewall policies**) while CE-FW-002 is a

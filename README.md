@@ -47,7 +47,7 @@ Policy folders use the **display name** as the folder name. Tags live in `policy
 | `/policies-versioning/cyber-essentials/compliance-policies` | `main` | `.json` | Intune Compliance policy | on |
 | `/policies-versioning/cyber-essentials/conditional-access` | `main` | `.json` | Intune Conditional Access policy | on |
 | `/policies-versioning/cyber-essentials/device-configuration-policies` | `main` | `.json` | Intune Device Configuration policy | on |
-| `/policies-versioning/cyber-essentials/update-rings` | `main` | `.json` | Intune Device Configuration policy | on |
+| `/policies-versioning/cyber-essentials/update-rings` | `main` | `.json` | Intune Windows Update Rings Policies | on |
 | `/policies-versioning/cyber-essentials/settings-catalog` | `main` | `.json` | Intune Configuration profile | on |
 | `/policies-versioning/cyber-essentials/endpoint-security/windows-firewall` | `main` | `.json` | Intune Windows firewall policies | on |
 | `/policies-versioning/cyber-essentials/endpoint-security/firewall-rules` | `main` | `.json` | Intune Windows Firewall Rules Policies | on |
@@ -55,9 +55,8 @@ Policy folders use the **display name** as the folder name. Tags live in `policy
 | `/policies-versioning/cyber-essentials/endpoint-security/account-protection` | `main` | `.json` | Local admin password solution | on |
 | `/policies-versioning/cyber-essentials/endpoint-security/bitlocker` | `main` | `.json` | Intune BitLocker Policies | on |
 
-The update rings sync through the Intune Device Configuration policy row; Nerdio
-auto-detects the `windowsUpdateForBusinessConfiguration` schema and classifies them as
-Windows Update Rings Policy.
+The update rings sync through their own row mapped as Intune Windows Update Rings
+Policies.
 
 6. Auto-synchronization: on (or refresh manually after pushes)
 
