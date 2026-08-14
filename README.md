@@ -29,7 +29,8 @@ policies-versioning/
 
 ### Intune types (under each framework)
 
-`compliance-policies` · `conditional-access` · `device-configuration-policies` · `settings-catalog` · `update-policies` · `endpoint-security`
+`compliance-policies` · `conditional-access` · `device-configuration-policies` ·
+`settings-catalog` · policy-specific folders under `endpoint-security`
 
 Policy folders use the **display name** as the folder name. Tags live in `policy.metadata.json`.
 
@@ -39,28 +40,38 @@ Policy folders use the **display name** as the folder name. Tags live in `policy
 2. Account: `Brandon-Nerdio`
 3. Repository: `gle-intune`
 4. Enable the **Intune Policies Versioning** toggle at the bottom of the form (next to *Auto-synchronization*). This is a form-level switch, **not** an option in the *File content* dropdown.
-5. Add **one mapping row per populated framework folder**:
+5. Add **one mapping row per Nerdio content type**. For Cyber Essentials, use:
 
 | Path | Branch | File extensions | File content | Include subfolders |
 |---|---|---|---|---|
-| `/policies-versioning/cyber-essentials` | `main` | `.json` | Intune Device Configuration policy | on |
-| `/policies-versioning/microsoft-defender` | `main` | `.json` | Intune Device Configuration policy | on |
+| `/policies-versioning/cyber-essentials/compliance-policies` | `main` | `.json` | Intune Compliance policy | on |
+| `/policies-versioning/cyber-essentials/conditional-access` | `main` | `.json` | Intune Conditional Access policy | on |
+| `/policies-versioning/cyber-essentials/device-configuration-policies` | `main` | `.json` | Intune Device Configuration policy | on |
+| `/policies-versioning/cyber-essentials/settings-catalog` | `main` | `.json` | Intune Configuration profile | on |
+| `/policies-versioning/cyber-essentials/endpoint-security/windows-firewall` | `main` | `.json` | Intune Windows firewall policies | on |
+| `/policies-versioning/cyber-essentials/endpoint-security/firewall-rules` | `main` | `.json` | Intune Windows Firewall Rules Policies | on |
+| `/policies-versioning/cyber-essentials/endpoint-security/asr-rules` | `main` | `.json` | Intune Attack surface reduction rules policies | on |
+| `/policies-versioning/cyber-essentials/endpoint-security/account-protection` | `main` | `.json` | Intune Account Protection Policies | on |
+| `/policies-versioning/cyber-essentials/endpoint-security/bitlocker` | `main` | `.json` | Intune BitLocker Policies | on |
 
 6. Auto-synchronization: on (or refresh manually after pushes)
 
-### Why the Path points at the framework, not the repo root
+### Why each Path points at a policy-type leaf
 
-Nerdio's versioning parser expects exactly three levels below the configured Path:
+Nerdio binds each configured Path to one *File content* parser. The policy folders must
+therefore sit directly beneath a path containing only that policy type:
 
 ```
-<Path>/<policy-type>/<policy-name>/<version>_<policy-name>.json
+<Path>/<policy-name>/<version>_<policy-name>.json
 ```
 
-This repo adds a `<framework>` level above `<policy-type>`, so pointing Path at `/policies-versioning` makes Nerdio read `cyber-essentials` as the policy type and `compliance-policies` as the policy name. Policies then sync with **blank names**. Setting Path to the framework folder realigns the three levels.
+Do not map `/policies-versioning`, `/policies-versioning/cyber-essentials`, or the
+`endpoint-security` parent. Those paths contain multiple schemas; assigning one content
+type to them can produce blank names, failed imports, or policies parsed as the wrong type.
 
-Add a new mapping row as each remaining framework folder gets its first policy.
-
-Do **not** add a second mapping row over the same path with a different *File content* type (e.g. *Windows script*) — that ingests every policy JSON twice and produces duplicate or junk entries.
+Every row must use a unique path. Do **not** add a second row over the same path with a
+different *File content* type — that ingests policy JSON twice and produces duplicate or
+junk entries.
 
 ## Adding a policy
 

@@ -1,8 +1,9 @@
-﻿{
+{
     "tags":  [
                  "cyber-essentials",
                  "ce",
-                 "update-policies",
+                 "device-configuration-policies",
+                 "windows-update-ring",
                  "pm"
              ]
 }

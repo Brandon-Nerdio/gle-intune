@@ -3,7 +3,7 @@
                  "cyber-essentials",
                  "ce",
                  "endpoint-security",
-                 "defender-antivirus",
-                 "mp"
+                 "firewall-rules",
+                 "fw"
              ]
 }
