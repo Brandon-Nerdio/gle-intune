@@ -1,6 +1,6 @@
 {
     "@odata.type":  "#microsoft.graph.conditionalAccessPolicy",
-    "displayName":  "CE-UAC-CA-001 - Block logins outside UK",
+    "displayName":  "CE-UAC-CA-001 - Block logins outside home countries",
     "state":  "enabledForReportingButNotEnforced",
     "conditions":  {
                        "applications":  {
@@ -11,7 +11,10 @@
                        "users":  {
                                      "includeUsers":  [
                                                           "All"
-                                                      ]
+                                                      ],
+                                     "excludeGroups":  [
+                                                           "{$GroupVars.BreakGlass}"
+                                                       ]
                                  },
                        "clientAppTypes":  [
                                               "all"

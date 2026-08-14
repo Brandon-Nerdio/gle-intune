@@ -1,0 +1,30 @@
+{
+    "@odata.type":  "#microsoft.graph.conditionalAccessPolicy",
+    "displayName":  "CE-UAC-CA-005 - Block legacy authentication",
+    "state":  "enabledForReportingButNotEnforced",
+    "conditions":  {
+                       "applications":  {
+                                            "includeApplications":  [
+                                                                        "All"
+                                                                    ]
+                                        },
+                       "users":  {
+                                     "includeUsers":  [
+                                                          "All"
+                                                      ],
+                                     "excludeGroups":  [
+                                                           "{$GroupVars.BreakGlass}"
+                                                       ]
+                                 },
+                       "clientAppTypes":  [
+                                              "exchangeActiveSync",
+                                              "other"
+                                          ]
+                   },
+    "grantControls":  {
+                          "operator":  "OR",
+                          "builtInControls":  [
+                                                  "block"
+                                              ]
+                      }
+}

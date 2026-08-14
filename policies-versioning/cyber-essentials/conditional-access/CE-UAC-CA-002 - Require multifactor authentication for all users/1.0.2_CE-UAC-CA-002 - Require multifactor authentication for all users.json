@@ -1,6 +1,6 @@
 {
     "@odata.type":  "#microsoft.graph.conditionalAccessPolicy",
-    "displayName":  "CE-UAC-CA-001 - Block logins outside UK",
+    "displayName":  "CE-UAC-CA-002 - Require multifactor authentication for all users",
     "state":  "enabledForReportingButNotEnforced",
     "conditions":  {
                        "applications":  {
@@ -11,24 +11,19 @@
                        "users":  {
                                      "includeUsers":  [
                                                           "All"
-                                                      ]
+                                                      ],
+                                     "excludeGroups":  [
+                                                           "{$GroupVars.BreakGlass}"
+                                                       ]
                                  },
                        "clientAppTypes":  [
                                               "all"
-                                          ],
-                       "locations":  {
-                                         "includeLocations":  [
-                                                                  "All"
-                                                              ],
-                                         "excludeLocations":  [
-                                                                  "{$LocationVars.HomeCountries}"
-                                                              ]
-                                     }
+                                          ]
                    },
     "grantControls":  {
                           "operator":  "OR",
                           "builtInControls":  [
-                                                  "block"
+                                                  "mfa"
                                               ]
                       }
 }
