@@ -1,9 +1,10 @@
 {
-    "tags": [
-        "cyber-essentials",
-        "ce",
-        "conditional-access",
-        "uac",
-        "cyber-essentials-enforced-ca"
-    ]
+    "tags":  [
+                 "cyber-essentials",
+                 "ce",
+                 "conditional-access",
+                 "uac",
+                 "cyber-essentials-enforced-ca"
+             ],
+    "description":  "Enforced variant of \u0027CE-UAC-CA-006 - Block Non Compliant Devices\u0027. Applies its access controls when conditions match and can block or challenge sign-ins. Deploy only after validating the report-only counterpart."
 }

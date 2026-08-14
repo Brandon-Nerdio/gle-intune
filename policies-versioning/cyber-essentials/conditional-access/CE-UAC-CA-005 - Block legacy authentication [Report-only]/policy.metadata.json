@@ -1,9 +1,10 @@
 {
-    "tags": [
-        "cyber-essentials",
-        "ce",
-        "conditional-access",
-        "uac",
-        "cyber-essentials-report-only-ca"
-    ]
+    "tags":  [
+                 "cyber-essentials",
+                 "ce",
+                 "conditional-access",
+                 "uac",
+                 "cyber-essentials-report-only-ca"
+             ],
+    "description":  "Report-only variant of \u0027CE-UAC-CA-005 - Block legacy authentication\u0027. Evaluates and logs matching sign-ins without enforcing access controls. Validate its results before deploying the enforced counterpart."
 }

@@ -1,0 +1,37 @@
+{
+    "@odata.type":  "#microsoft.graph.conditionalAccessPolicy",
+    "displayName":  "CE-UAC-CA-001 - Block logins outside home countries [Enforced]",
+    "state":  "enabled",
+    "conditions":  {
+                       "applications":  {
+                                            "includeApplications":  [
+                                                                        "All"
+                                                                    ]
+                                        },
+                       "users":  {
+                                     "includeUsers":  [
+                                                          "All"
+                                                      ],
+                                     "excludeGroups":  [
+                                                           "{$GroupVars.BreakGlass}"
+                                                       ]
+                                 },
+                       "clientAppTypes":  [
+                                              "all"
+                                          ],
+                       "locations":  {
+                                         "includeLocations":  [
+                                                                  "All"
+                                                              ],
+                                         "excludeLocations":  [
+                                                                  "{$LocationVars.HomeCountries}"
+                                                              ]
+                                     }
+                   },
+    "grantControls":  {
+                          "operator":  "OR",
+                          "builtInControls":  [
+                                                  "block"
+                                              ]
+                      }
+}

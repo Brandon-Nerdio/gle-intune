@@ -35,9 +35,10 @@ same folder:
   `cyber-essentials-report-only-ca` tag.
 - `[Enforced]` uses `enabled` and the `cyber-essentials-enforced-ca` tag.
 
-The counterparts have matching conditions but distinct titles and descriptions. Validate
-Report-only first, then replace it with Enforced; never assign both variants of one
-control to the same target.
+The counterparts have matching conditions but distinct titles and tags. Entra's
+Conditional Access API does not accept a `description` property, so the long-form
+difference text lives in `policy.metadata.json` only. Validate Report-only first, then
+replace it with Enforced; never assign both variants of one control to the same target.
 
 ### Update rings
 
