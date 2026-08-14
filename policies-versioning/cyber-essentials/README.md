@@ -18,7 +18,7 @@ row and its own folder.
 | `/policies-versioning/cyber-essentials/endpoint-security/windows-firewall` | Intune Windows firewall policies |
 | `/policies-versioning/cyber-essentials/endpoint-security/firewall-rules` | Intune Windows Firewall Rules Policies |
 | `/policies-versioning/cyber-essentials/endpoint-security/asr-rules` | Intune Attack surface reduction rules policies |
-| `/policies-versioning/cyber-essentials/endpoint-security/account-protection` | Intune Account Protection Policies |
+| `/policies-versioning/cyber-essentials/endpoint-security/account-protection` | Local admin password solution |
 | `/policies-versioning/cyber-essentials/endpoint-security/bitlocker` | Intune BitLocker Policies |
 | `/policies-versioning/cyber-essentials/settings-catalog` | Intune Configuration profile |
 

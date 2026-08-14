@@ -52,7 +52,7 @@ Policy folders use the **display name** as the folder name. Tags live in `policy
 | `/policies-versioning/cyber-essentials/endpoint-security/windows-firewall` | `main` | `.json` | Intune Windows firewall policies | on |
 | `/policies-versioning/cyber-essentials/endpoint-security/firewall-rules` | `main` | `.json` | Intune Windows Firewall Rules Policies | on |
 | `/policies-versioning/cyber-essentials/endpoint-security/asr-rules` | `main` | `.json` | Intune Attack surface reduction rules policies | on |
-| `/policies-versioning/cyber-essentials/endpoint-security/account-protection` | `main` | `.json` | Intune Account Protection Policies | on |
+| `/policies-versioning/cyber-essentials/endpoint-security/account-protection` | `main` | `.json` | Local admin password solution | on |
 | `/policies-versioning/cyber-essentials/endpoint-security/bitlocker` | `main` | `.json` | Intune BitLocker Policies | on |
 
 The update rings sync through the Intune Device Configuration policy row; Nerdio
