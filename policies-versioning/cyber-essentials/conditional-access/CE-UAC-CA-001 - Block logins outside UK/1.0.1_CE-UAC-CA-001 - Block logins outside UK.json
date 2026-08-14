@@ -1,0 +1,34 @@
+{
+    "@odata.type":  "#microsoft.graph.conditionalAccessPolicy",
+    "displayName":  "CE-UAC-CA-001 - Block logins outside UK",
+    "state":  "enabledForReportingButNotEnforced",
+    "conditions":  {
+                       "applications":  {
+                                            "includeApplications":  [
+                                                                        "All"
+                                                                    ]
+                                        },
+                       "users":  {
+                                     "includeUsers":  [
+                                                          "All"
+                                                      ]
+                                 },
+                       "clientAppTypes":  [
+                                              "all"
+                                          ],
+                       "locations":  {
+                                         "includeLocations":  [
+                                                                  "All"
+                                                              ],
+                                         "excludeLocations":  [
+                                                                  "{$LocationVars.HomeCountries}"
+                                                              ]
+                                     }
+                   },
+    "grantControls":  {
+                          "operator":  "OR",
+                          "builtInControls":  [
+                                                  "block"
+                                              ]
+                      }
+}

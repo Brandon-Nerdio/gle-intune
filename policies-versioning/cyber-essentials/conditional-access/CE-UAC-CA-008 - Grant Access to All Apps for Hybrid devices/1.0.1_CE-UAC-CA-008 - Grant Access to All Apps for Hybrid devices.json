@@ -1,0 +1,38 @@
+{
+    "@odata.type":  "#microsoft.graph.conditionalAccessPolicy",
+    "displayName":  "CE-UAC-CA-008 - Grant Access to All Apps for Hybrid devices",
+    "state":  "enabledForReportingButNotEnforced",
+    "conditions":  {
+                       "applications":  {
+                                            "includeApplications":  [
+                                                                        "All"
+                                                                    ]
+                                        },
+                       "users":  {
+                                     "includeUsers":  [
+                                                          "All"
+                                                      ]
+                                 },
+                       "clientAppTypes":  [
+                                              "all"
+                                          ],
+                       "platforms":  {
+                                         "includePlatforms":  [
+                                                                  "windows"
+                                                              ],
+                                         "excludePlatforms":  [
+                                                                  "android",
+                                                                  "iOS",
+                                                                  "windowsPhone",
+                                                                  "macOS",
+                                                                  "linux"
+                                                              ]
+                                     }
+                   },
+    "grantControls":  {
+                          "operator":  "OR",
+                          "builtInControls":  [
+                                                  "domainJoinedDevice"
+                                              ]
+                      }
+}
