@@ -26,6 +26,19 @@ Set **Intune Policies Versioning** on each row, with file mask `.json`, branch `
 and **Include subfolders** enabled. Do not map the Cyber Essentials root or the
 `endpoint-security` parent: those paths contain multiple incompatible policy types.
 
+### Conditional Access variants
+
+Each of the eight Conditional Access controls has two separate policy definitions in the
+same folder:
+
+- `[Report-only]` uses `enabledForReportingButNotEnforced` and the
+  `cyber-essentials-report-only-ca` tag.
+- `[Enforced]` uses `enabled` and the `cyber-essentials-enforced-ca` tag.
+
+The counterparts have matching conditions but distinct titles and descriptions. Validate
+Report-only first, then replace it with Enforced; never assign both variants of one
+control to the same target.
+
 ### Update rings
 
 The two Windows Update rings use the `windowsUpdateForBusinessConfiguration` schema and
@@ -47,7 +60,7 @@ underlying settings-catalog payload reliably.
 | Folder | Contents |
 |---|---|
 | `compliance-policies` | Antivirus/firewall, password, minimum OS |
-| `conditional-access` | MFA, legacy auth block, compliant / Entra-joined device gates |
+| `conditional-access` | 8 CA controls, each with Report-only and Enforced variants (16 policies) |
 | `device-configuration-policies` | Password policy (legacy device config) |
 | `update-rings` | CE-PM-001 pilot and CE-PM-002 standard Windows Update rings |
 | `endpoint-security/windows-firewall` | CE-FW-001 firewall enforcement (Windows Firewall config) |

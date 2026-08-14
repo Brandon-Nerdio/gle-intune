@@ -1,0 +1,36 @@
+{
+    "@odata.type": "#microsoft.graph.conditionalAccessPolicy",
+    "displayName": "CE-UAC-CA-007 - Block Devices not joined to EntraID [Report-only]",
+    "description": "Report-only variant of 'CE-UAC-CA-007 - Block Devices not joined to EntraID'. Evaluates and logs matching sign-ins without enforcing access controls. Validate its results before deploying the enforced counterpart.",
+    "state": "enabledForReportingButNotEnforced",
+    "conditions": {
+        "applications": {
+            "includeApplications": [
+                "All"
+            ]
+        },
+        "users": {
+            "includeUsers": [
+                "All"
+            ],
+            "excludeGroups": [
+                "{$GroupVars.BreakGlass}"
+            ]
+        },
+        "clientAppTypes": [
+            "all"
+        ],
+        "devices": {
+            "deviceFilter": {
+                "mode": "exclude",
+                "rule": "device.trustType -eq \"AzureAD\""
+            }
+        }
+    },
+    "grantControls": {
+        "operator": "OR",
+        "builtInControls": [
+            "block"
+        ]
+    }
+}

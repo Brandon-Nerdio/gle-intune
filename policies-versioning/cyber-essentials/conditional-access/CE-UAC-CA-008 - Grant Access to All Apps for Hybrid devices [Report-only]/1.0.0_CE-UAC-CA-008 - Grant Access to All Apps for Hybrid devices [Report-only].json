@@ -1,0 +1,42 @@
+{
+    "@odata.type": "#microsoft.graph.conditionalAccessPolicy",
+    "displayName": "CE-UAC-CA-008 - Grant Access to All Apps for Hybrid devices [Report-only]",
+    "description": "Report-only variant of 'CE-UAC-CA-008 - Grant Access to All Apps for Hybrid devices'. Evaluates and logs matching sign-ins without enforcing access controls. Validate its results before deploying the enforced counterpart.",
+    "state": "enabledForReportingButNotEnforced",
+    "conditions": {
+        "applications": {
+            "includeApplications": [
+                "All"
+            ]
+        },
+        "users": {
+            "includeUsers": [
+                "All"
+            ],
+            "excludeGroups": [
+                "{$GroupVars.BreakGlass}"
+            ]
+        },
+        "clientAppTypes": [
+            "all"
+        ],
+        "platforms": {
+            "includePlatforms": [
+                "windows"
+            ],
+            "excludePlatforms": [
+                "android",
+                "iOS",
+                "windowsPhone",
+                "macOS",
+                "linux"
+            ]
+        }
+    },
+    "grantControls": {
+        "operator": "OR",
+        "builtInControls": [
+            "domainJoinedDevice"
+        ]
+    }
+}

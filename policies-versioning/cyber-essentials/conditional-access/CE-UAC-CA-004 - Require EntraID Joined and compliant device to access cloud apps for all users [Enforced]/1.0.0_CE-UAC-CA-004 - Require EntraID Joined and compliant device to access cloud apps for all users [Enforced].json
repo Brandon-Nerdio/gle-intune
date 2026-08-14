@@ -1,0 +1,36 @@
+{
+    "@odata.type": "#microsoft.graph.conditionalAccessPolicy",
+    "displayName": "CE-UAC-CA-004 - Require EntraID Joined and compliant device to access cloud apps for all users [Enforced]",
+    "description": "Enforced variant of 'CE-UAC-CA-004 - Require EntraID Joined and compliant device to access cloud apps for all users'. Applies its access controls when conditions match and can block or challenge sign-ins. Deploy only after validating the report-only counterpart.",
+    "state": "enabled",
+    "conditions": {
+        "applications": {
+            "includeApplications": [
+                "All"
+            ]
+        },
+        "users": {
+            "includeUsers": [
+                "All"
+            ],
+            "excludeGroups": [
+                "{$GroupVars.BreakGlass}"
+            ]
+        },
+        "clientAppTypes": [
+            "all"
+        ],
+        "devices": {
+            "deviceFilter": {
+                "mode": "include",
+                "rule": "device.trustType -eq \"AzureAD\""
+            }
+        }
+    },
+    "grantControls": {
+        "operator": "OR",
+        "builtInControls": [
+            "compliantDevice"
+        ]
+    }
+}
