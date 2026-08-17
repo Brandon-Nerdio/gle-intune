@@ -13,7 +13,6 @@ row and its own folder.
 |---|---|
 | `/policies-versioning/cyber-essentials/compliance-policies` | Intune Compliance policy |
 | `/policies-versioning/cyber-essentials/conditional-access` | Intune Conditional Access policy |
-| `/policies-versioning/cyber-essentials/device-configuration-policies` | Intune Device Configuration policy |
 | `/policies-versioning/cyber-essentials/update-rings` | Intune Windows Update Rings Policies |
 | `/policies-versioning/cyber-essentials/endpoint-security/windows-firewall` | Intune Windows firewall policies |
 | `/policies-versioning/cyber-essentials/endpoint-security/firewall-rules` | Intune Windows Firewall Rules Policies |
@@ -56,19 +55,35 @@ policy (only Exclusions, Update Controls, and Security Experience). It is theref
 under `settings-catalog` and synced as **Intune Configuration profile**, which imports the
 underlying settings-catalog payload reliably.
 
+**CE-UAC-001 Password policy enforcement** was originally a legacy
+`windows10GeneralConfiguration` device-configuration template. Windows 11 rejects that
+template's DeviceLock CSPs with `0x82aa0002`, so at pack version `1.1.0` it was rebuilt as a
+Settings Catalog policy and moved into `settings-catalog`. The
+`device-configuration-policies` folder is now empty and its Link and Manage Repository row
+has been removed — re-add it only if a genuine legacy device-configuration profile is
+introduced.
+
+**DeviceLock ownership.** `CE-UAC-001` and `CE-SC-003` both write to the Windows DeviceLock
+CSP, so child nodes are split between them: `CE-UAC-001` owns password composition
+(`AllowSimpleDevicePassword`, `AlphanumericDevicePasswordRequired`,
+`MinDevicePasswordLength`, `DevicePasswordHistory`, `DevicePasswordExpiration`) and
+`CE-SC-003` owns the locking controls (`MaxInactivityTimeDeviceLock`,
+`MaxDevicePasswordFailedAttempts`). Both must keep sending the same value for the shared
+`DevicePasswordEnabled` parent. Do not move a setting between these two policies — matching
+values are tolerated, differing values put both profiles into a conflict error state.
+
 ## Contents by folder
 
 | Folder | Contents |
 |---|---|
 | `compliance-policies` | Antivirus/firewall, password, minimum OS |
 | `conditional-access` | 8 CA controls, each with Report-only and Enforced variants (16 policies) |
-| `device-configuration-policies` | Password policy (legacy device config) |
 | `update-rings` | CE-PM-001 pilot and CE-PM-002 standard Windows Update rings |
 | `endpoint-security/windows-firewall` | CE-FW-001 firewall enforcement (Windows Firewall config) |
 | `endpoint-security/firewall-rules` | CE-FW-002 inbound RDP block (Windows Firewall Rules) |
 | `endpoint-security/asr-rules` | CE-MP-002 ASR audit and block modes |
 | `endpoint-security/account-protection` | CE-SC-004 local admin restriction (LAPS) |
 | `endpoint-security/bitlocker` | CE-SC-005 BitLocker enforcement |
-| `settings-catalog` | CE-MP-001 Defender AV baseline, network protection, WHfB, local hardening, AutoRun, screen lock |
+| `settings-catalog` | CE-MP-001 Defender AV baseline, network protection, WHfB, local hardening, AutoRun, screen lock, password policy |
 
 Naming uses the `CE-*-###` IDs from the source pack (for example `CE-FW-001`, `CE-MP-002`).

@@ -32,6 +32,9 @@ policies-versioning/
 `compliance-policies` · `conditional-access` · `device-configuration-policies` ·
 `settings-catalog` · policy-specific folders under `endpoint-security`
 
+Cyber Essentials no longer uses `device-configuration-policies`; its only occupant,
+`CE-UAC-001`, was rebuilt as a Settings Catalog policy at pack `1.1.0`.
+
 Policy folders use the **display name** as the folder name. Tags live in `policy.metadata.json`.
 
 ## Link in Nerdio Manager
@@ -46,7 +49,6 @@ Policy folders use the **display name** as the folder name. Tags live in `policy
 |---|---|---|---|---|
 | `/policies-versioning/cyber-essentials/compliance-policies` | `main` | `.json` | Intune Compliance policy | on |
 | `/policies-versioning/cyber-essentials/conditional-access` | `main` | `.json` | Intune Conditional Access policy | on |
-| `/policies-versioning/cyber-essentials/device-configuration-policies` | `main` | `.json` | Intune Device Configuration policy | on |
 | `/policies-versioning/cyber-essentials/update-rings` | `main` | `.json` | Intune Windows Update Rings Policies | on |
 | `/policies-versioning/cyber-essentials/settings-catalog` | `main` | `.json` | Intune Configuration profile | on |
 | `/policies-versioning/cyber-essentials/endpoint-security/windows-firewall` | `main` | `.json` | Intune Windows firewall policies | on |
