@@ -29,16 +29,23 @@ const srcRoot = path.join(root, "policies-versioning", "cyber-essentials");
 const PACK_INCLUDES = {
 	foundation: [
 		"compliance-policies",
-		"conditional-access", // filtered to Report-only only
+		"conditional-access", // CA filtered per pack (Report-only vs Enforced)
 		"settings-catalog",
 		"update-rings",
-		"endpoint-security/asr-rules", // filtered to Audit Mode only
+		"endpoint-security/asr-rules", // ASR filtered per pack (Audit vs Block)
 		"endpoint-security/account-protection",
 		"endpoint-security/bitlocker",
+		"endpoint-security/windows-firewall",
+		"endpoint-security/firewall-rules",
 	],
 	hardening: [
-		"conditional-access", // filtered to Enforced only
-		"endpoint-security/asr-rules", // filtered to Block Mode only
+		"compliance-policies",
+		"conditional-access", // CA filtered per pack (Report-only vs Enforced)
+		"settings-catalog",
+		"update-rings",
+		"endpoint-security/asr-rules", // ASR filtered per pack (Audit vs Block)
+		"endpoint-security/account-protection",
+		"endpoint-security/bitlocker",
 		"endpoint-security/windows-firewall",
 		"endpoint-security/firewall-rules",
 	],
@@ -272,26 +279,20 @@ function writePackReadme(pack) {
 		pack === "foundation" ? "cyber-essentials-hardening" : "cyber-essentials-foundation";
 	const role =
 		pack === "foundation"
-			? "Stage-first Cyber Essentials pack: compliance, CA Report-only, ASR Audit, Settings Catalog, update rings, BitLocker, and LAPS. Assign to a pilot ring before Hardening."
-			: "Stage-second Cyber Essentials pack: CA Enforced, ASR Block, and Windows Firewall. Assign only after Foundation is green on the pilot ring. Never dual-assign Report-only and Enforced (or ASR Audit and Block) to the same targets.";
+			? "Complete Cyber Essentials baseline tuned for the **Foundation** (non-disruptive) stage: every control is present, with Conditional Access in Report-only and ASR in Audit mode. Assign to a pilot ring first, then promote the same scope to the Hardening pack."
+			: "Complete Cyber Essentials baseline tuned for the **Hardening** (enforcing) stage: every control is present, with Conditional Access Enforced and ASR in Block mode. Assign only after the Foundation pack is validated. Never assign Foundation and Hardening to the same targets at the same time.";
 
-	const paths =
-		pack === "foundation"
-			? [
-					["compliance-policies", "Intune Compliance policy"],
-					["conditional-access", "Intune Conditional Access policy"],
-					["update-rings", "Intune Windows Update Rings Policies"],
-					["settings-catalog", "Intune Configuration profile"],
-					["endpoint-security/asr-rules", "Intune Attack surface reduction rules policies"],
-					["endpoint-security/account-protection", "Local admin password solution"],
-					["endpoint-security/bitlocker", "Intune BitLocker Policies"],
-				]
-			: [
-					["conditional-access", "Intune Conditional Access policy"],
-					["endpoint-security/asr-rules", "Intune Attack surface reduction rules policies"],
-					["endpoint-security/windows-firewall", "Intune Windows firewall policies"],
-					["endpoint-security/firewall-rules", "Intune Windows Firewall Rules Policies"],
-				];
+	const paths = [
+		["compliance-policies", "Intune Compliance policy"],
+		["conditional-access", "Intune Conditional Access policy"],
+		["update-rings", "Intune Windows Update Rings Policies"],
+		["settings-catalog", "Intune Configuration profile"],
+		["endpoint-security/asr-rules", "Intune Attack surface reduction rules policies"],
+		["endpoint-security/account-protection", "Local admin password solution"],
+		["endpoint-security/bitlocker", "Intune BitLocker Policies"],
+		["endpoint-security/windows-firewall", "Intune Windows firewall policies"],
+		["endpoint-security/firewall-rules", "Intune Windows Firewall Rules Policies"],
+	];
 
 	const table = paths
 		.map(

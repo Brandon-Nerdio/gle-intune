@@ -1,8 +1,8 @@
 {
     "@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/configurationPolicies(assignments(),settings())/$entity",
     "@odata.type": "#microsoft.graph.deviceManagementConfigurationPolicy",
-    "@odata.id": "deviceManagement/configurationPolicies('95327b93-0287-4d34-a189-4922da02393b')",
-    "@odata.editLink": "deviceManagement/configurationPolicies('95327b93-0287-4d34-a189-4922da02393b')",
+    "@odata.id": "deviceManagement/configurationPolicies('d0cb3786-253a-4926-ad84-0269576b51ce')",
+    "@odata.editLink": "deviceManagement/configurationPolicies('d0cb3786-253a-4926-ad84-0269576b51ce')",
     "createdDateTime@odata.type": "#DateTimeOffset",
     "createdDateTime": "2026-05-09T03:25:19.8705956Z",
     "creationSource": null,
@@ -20,7 +20,7 @@
     "settingCount": 1,
     "technologies@odata.type": "#microsoft.graph.deviceManagementConfigurationTechnologies",
     "technologies": "mdm,microsoftSense",
-    "id": "95327b93-0287-4d34-a189-4922da02393b",
+    "id": "d0cb3786-253a-4926-ad84-0269576b51ce",
     "templateReference": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationPolicyTemplateReference",
         "templateId": "19c8aa67-f286-4861-9aa0-f23541d31680_1",
@@ -39,8 +39,8 @@
     "settings": [
         {
             "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
-            "@odata.id": "deviceManagement/configurationPolicies('95327b93-0287-4d34-a189-4922da02393b')/settings('0')",
-            "@odata.editLink": "deviceManagement/configurationPolicies('95327b93-0287-4d34-a189-4922da02393b')/settings('0')",
+            "@odata.id": "deviceManagement/configurationPolicies('d0cb3786-253a-4926-ad84-0269576b51ce')/settings('0')",
+            "@odata.editLink": "deviceManagement/configurationPolicies('d0cb3786-253a-4926-ad84-0269576b51ce')/settings('0')",
             "id": "0",
             "settingInstance": {
                 "@odata.type": "#microsoft.graph.deviceManagementConfigurationGroupSettingCollectionInstance",

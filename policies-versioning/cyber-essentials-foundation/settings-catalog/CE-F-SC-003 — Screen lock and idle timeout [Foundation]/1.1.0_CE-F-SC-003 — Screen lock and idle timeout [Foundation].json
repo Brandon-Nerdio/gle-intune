@@ -1,8 +1,8 @@
 {
     "@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/configurationPolicies(assignments(),settings())/$entity",
     "@odata.type": "#microsoft.graph.deviceManagementConfigurationPolicy",
-    "@odata.id": "deviceManagement/configurationPolicies('30c483be-4736-4633-803c-7e03c2538011')",
-    "@odata.editLink": "deviceManagement/configurationPolicies('30c483be-4736-4633-803c-7e03c2538011')",
+    "@odata.id": "deviceManagement/configurationPolicies('b8804477-3632-48e5-a648-64d55dca5b97')",
+    "@odata.editLink": "deviceManagement/configurationPolicies('b8804477-3632-48e5-a648-64d55dca5b97')",
     "createdDateTime@odata.type": "#DateTimeOffset",
     "createdDateTime": "2026-05-08T17:35:12.9537742Z",
     "creationSource": null,
@@ -20,7 +20,7 @@
     "settingCount": 1,
     "technologies@odata.type": "#microsoft.graph.deviceManagementConfigurationTechnologies",
     "technologies": "mdm",
-    "id": "30c483be-4736-4633-803c-7e03c2538011",
+    "id": "b8804477-3632-48e5-a648-64d55dca5b97",
     "templateReference": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationPolicyTemplateReference",
         "templateId": "",
@@ -39,8 +39,8 @@
     "settings": [
         {
             "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
-            "@odata.id": "deviceManagement/configurationPolicies('30c483be-4736-4633-803c-7e03c2538011')/settings('0')",
-            "@odata.editLink": "deviceManagement/configurationPolicies('30c483be-4736-4633-803c-7e03c2538011')/settings('0')",
+            "@odata.id": "deviceManagement/configurationPolicies('b8804477-3632-48e5-a648-64d55dca5b97')/settings('0')",
+            "@odata.editLink": "deviceManagement/configurationPolicies('b8804477-3632-48e5-a648-64d55dca5b97')/settings('0')",
             "id": "0",
             "settingInstance": {
                 "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",

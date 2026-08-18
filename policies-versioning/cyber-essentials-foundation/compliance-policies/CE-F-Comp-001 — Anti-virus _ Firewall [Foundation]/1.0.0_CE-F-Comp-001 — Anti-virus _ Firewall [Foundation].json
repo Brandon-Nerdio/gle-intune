@@ -1,13 +1,13 @@
 {
     "@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/deviceCompliancePolicies(assignments(),scheduledActionsForRule(scheduledActionConfigurations()))/$entity",
     "@odata.type": "#microsoft.graph.windows10CompliancePolicy",
-    "@odata.id": "deviceManagement/deviceCompliancePolicies('16a306c7-fc16-4a60-acf1-7599196c80e3')",
-    "@odata.editLink": "deviceManagement/deviceCompliancePolicies('16a306c7-fc16-4a60-acf1-7599196c80e3')/microsoft.graph.windows10CompliancePolicy",
+    "@odata.id": "deviceManagement/deviceCompliancePolicies('bdf59b9b-ab2e-443f-9cfd-ff02294ab578')",
+    "@odata.editLink": "deviceManagement/deviceCompliancePolicies('bdf59b9b-ab2e-443f-9cfd-ff02294ab578')/microsoft.graph.windows10CompliancePolicy",
     "roleScopeTagIds@odata.type": "#Collection(String)",
     "roleScopeTagIds": [
         "0"
     ],
-    "id": "16a306c7-fc16-4a60-acf1-7599196c80e3",
+    "id": "bdf59b9b-ab2e-443f-9cfd-ff02294ab578",
     "createdDateTime@odata.type": "#DateTimeOffset",
     "createdDateTime": "2026-05-18T20:47:53.901822Z",
     "description": "Foundation Cyber Essentials pack policy.",

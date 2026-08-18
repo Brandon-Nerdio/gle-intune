@@ -1,13 +1,13 @@
 {
     "@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/deviceCompliancePolicies(assignments(),scheduledActionsForRule(scheduledActionConfigurations()))/$entity",
     "@odata.type": "#microsoft.graph.windows10CompliancePolicy",
-    "@odata.id": "deviceManagement/deviceCompliancePolicies('cd130598-9e88-4f0b-8c44-d831eebfbec2')",
-    "@odata.editLink": "deviceManagement/deviceCompliancePolicies('cd130598-9e88-4f0b-8c44-d831eebfbec2')/microsoft.graph.windows10CompliancePolicy",
+    "@odata.id": "deviceManagement/deviceCompliancePolicies('cd113fa0-0cb8-4946-9377-c0e2ff3dedec')",
+    "@odata.editLink": "deviceManagement/deviceCompliancePolicies('cd113fa0-0cb8-4946-9377-c0e2ff3dedec')/microsoft.graph.windows10CompliancePolicy",
     "roleScopeTagIds@odata.type": "#Collection(String)",
     "roleScopeTagIds": [
         "0"
     ],
-    "id": "cd130598-9e88-4f0b-8c44-d831eebfbec2",
+    "id": "cd113fa0-0cb8-4946-9377-c0e2ff3dedec",
     "createdDateTime@odata.type": "#DateTimeOffset",
     "createdDateTime": "2026-05-16T00:04:45.6577258Z",
     "description": "[Foundation pack] CE 3: unsupported software must be removed\n\nCurrently set to 25h2\n\nMinimum OS version: latest supported Windows 11 build minus 1 (e.g., if 24H2 is current, set 23H2 or 24H2); macOS minimum: current supported minus 1 (e.g., macOS 14). Set \"Mark non-compliant after grace period of 7 days\".",

@@ -1,8 +1,8 @@
 {
     "@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/configurationPolicies(assignments(),settings())/$entity",
     "@odata.type": "#microsoft.graph.deviceManagementConfigurationPolicy",
-    "@odata.id": "deviceManagement/configurationPolicies('f5b68122-198d-43c9-a79b-bc96a9e5e528')",
-    "@odata.editLink": "deviceManagement/configurationPolicies('f5b68122-198d-43c9-a79b-bc96a9e5e528')",
+    "@odata.id": "deviceManagement/configurationPolicies('27cb203c-58a1-4e36-bf25-1a5fda69621e')",
+    "@odata.editLink": "deviceManagement/configurationPolicies('27cb203c-58a1-4e36-bf25-1a5fda69621e')",
     "createdDateTime@odata.type": "#DateTimeOffset",
     "createdDateTime": "2026-05-18T21:30:11.1024358Z",
     "creationSource": null,
@@ -20,7 +20,7 @@
     "settingCount": 2,
     "technologies@odata.type": "#microsoft.graph.deviceManagementConfigurationTechnologies",
     "technologies": "mdm,microsoftSense",
-    "id": "f5b68122-198d-43c9-a79b-bc96a9e5e528",
+    "id": "27cb203c-58a1-4e36-bf25-1a5fda69621e",
     "templateReference": {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationPolicyTemplateReference",
         "templateId": "e8c053d6-9f95-42b1-a7f1-ebfd71c67a4b_1",
@@ -39,8 +39,8 @@
     "settings": [
         {
             "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
-            "@odata.id": "deviceManagement/configurationPolicies('f5b68122-198d-43c9-a79b-bc96a9e5e528')/settings('0')",
-            "@odata.editLink": "deviceManagement/configurationPolicies('f5b68122-198d-43c9-a79b-bc96a9e5e528')/settings('0')",
+            "@odata.id": "deviceManagement/configurationPolicies('27cb203c-58a1-4e36-bf25-1a5fda69621e')/settings('0')",
+            "@odata.editLink": "deviceManagement/configurationPolicies('27cb203c-58a1-4e36-bf25-1a5fda69621e')/settings('0')",
             "id": "0",
             "settingInstance": {
                 "@odata.type": "#microsoft.graph.deviceManagementConfigurationGroupSettingCollectionInstance",
@@ -313,8 +313,8 @@
         },
         {
             "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
-            "@odata.id": "deviceManagement/configurationPolicies('f5b68122-198d-43c9-a79b-bc96a9e5e528')/settings('1')",
-            "@odata.editLink": "deviceManagement/configurationPolicies('f5b68122-198d-43c9-a79b-bc96a9e5e528')/settings('1')",
+            "@odata.id": "deviceManagement/configurationPolicies('27cb203c-58a1-4e36-bf25-1a5fda69621e')/settings('1')",
+            "@odata.editLink": "deviceManagement/configurationPolicies('27cb203c-58a1-4e36-bf25-1a5fda69621e')/settings('1')",
             "id": "1",
             "settingInstance": {
                 "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",

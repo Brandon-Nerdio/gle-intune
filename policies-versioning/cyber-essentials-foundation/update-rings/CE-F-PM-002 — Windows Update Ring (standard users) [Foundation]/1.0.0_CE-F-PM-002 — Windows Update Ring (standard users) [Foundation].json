@@ -1,9 +1,9 @@
 {
     "@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/deviceConfigurations(assignments())/$entity",
     "@odata.type": "#microsoft.graph.windowsUpdateForBusinessConfiguration",
-    "@odata.id": "deviceManagement/deviceConfigurations('f87aaed4-f1e4-4e1e-b772-027622fe350b')",
-    "@odata.editLink": "deviceManagement/deviceConfigurations('f87aaed4-f1e4-4e1e-b772-027622fe350b')/microsoft.graph.windowsUpdateForBusinessConfiguration",
-    "id": "f87aaed4-f1e4-4e1e-b772-027622fe350b",
+    "@odata.id": "deviceManagement/deviceConfigurations('62dfbb4e-c36a-463a-918e-710c05b05a9e')",
+    "@odata.editLink": "deviceManagement/deviceConfigurations('62dfbb4e-c36a-463a-918e-710c05b05a9e')/microsoft.graph.windowsUpdateForBusinessConfiguration",
+    "id": "62dfbb4e-c36a-463a-918e-710c05b05a9e",
     "lastModifiedDateTime@odata.type": "#DateTimeOffset",
     "lastModifiedDateTime": "2026-05-18T21:41:03.864548Z",
     "roleScopeTagIds@odata.type": "#Collection(String)",
