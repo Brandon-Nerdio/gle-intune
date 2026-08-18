@@ -1,0 +1,38 @@
+{
+    "@odata.type": "#microsoft.graph.conditionalAccessPolicy",
+    "displayName": "CE-F-UAC-CA-001 - Block logins outside home countries [Foundation] [Report-only]",
+    "state": "enabledForReportingButNotEnforced",
+    "conditions": {
+        "applications": {
+            "includeApplications": [
+                "All"
+            ]
+        },
+        "users": {
+            "includeUsers": [
+                "All"
+            ],
+            "excludeGroups": [
+                "{$GroupVars.BreakGlass}"
+            ]
+        },
+        "clientAppTypes": [
+            "all"
+        ],
+        "locations": {
+            "includeLocations": [
+                "All"
+            ],
+            "excludeLocations": [
+                "{$LocationVars.HomeCountries}"
+            ]
+        }
+    },
+    "grantControls": {
+        "operator": "OR",
+        "builtInControls": [
+            "block"
+        ]
+    },
+    "description": "Foundation Cyber Essentials pack policy."
+}

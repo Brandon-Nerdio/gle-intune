@@ -1,0 +1,13 @@
+{
+    "tags": [
+        "cyber-essentials-foundation",
+        "ce-foundation",
+        "cyber-essentials",
+        "ce",
+        "conditional-access",
+        "foundation",
+        "uac",
+        "cyber-essentials-foundation-report-only-ca"
+    ],
+    "description": "[Foundation] Report-only variant of 'CE-UAC-CA-005 - Block legacy authentication'. Evaluates and logs matching sign-ins without enforcing access controls. Validate its results before deploying the enforced counterpart."
+}

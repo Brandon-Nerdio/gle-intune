@@ -1,0 +1,41 @@
+{
+    "@odata.type": "#microsoft.graph.conditionalAccessPolicy",
+    "displayName": "CE-F-UAC-CA-006 - Block Non Compliant Devices [Foundation] [Report-only]",
+    "state": "enabledForReportingButNotEnforced",
+    "conditions": {
+        "applications": {
+            "includeApplications": [
+                "All"
+            ]
+        },
+        "users": {
+            "includeUsers": [
+                "All"
+            ],
+            "excludeGroups": [
+                "{$GroupVars.BreakGlass}"
+            ]
+        },
+        "clientAppTypes": [
+            "all"
+        ],
+        "platforms": {
+            "includePlatforms": [
+                "all"
+            ],
+            "excludePlatforms": [
+                "android",
+                "iOS",
+                "macOS",
+                "linux"
+            ]
+        }
+    },
+    "grantControls": {
+        "operator": "OR",
+        "builtInControls": [
+            "compliantDevice"
+        ]
+    },
+    "description": "Foundation Cyber Essentials pack policy."
+}

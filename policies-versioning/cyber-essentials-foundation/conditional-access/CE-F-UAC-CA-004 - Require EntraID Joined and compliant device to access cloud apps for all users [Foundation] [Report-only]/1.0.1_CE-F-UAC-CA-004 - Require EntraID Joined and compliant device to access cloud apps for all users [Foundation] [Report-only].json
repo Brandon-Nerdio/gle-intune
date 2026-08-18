@@ -1,0 +1,36 @@
+{
+    "@odata.type": "#microsoft.graph.conditionalAccessPolicy",
+    "displayName": "CE-F-UAC-CA-004 - Require EntraID Joined and compliant device to access cloud apps for all users [Foundation] [Report-only]",
+    "state": "enabledForReportingButNotEnforced",
+    "conditions": {
+        "applications": {
+            "includeApplications": [
+                "All"
+            ]
+        },
+        "users": {
+            "includeUsers": [
+                "All"
+            ],
+            "excludeGroups": [
+                "{$GroupVars.BreakGlass}"
+            ]
+        },
+        "clientAppTypes": [
+            "all"
+        ],
+        "devices": {
+            "deviceFilter": {
+                "mode": "include",
+                "rule": "device.trustType -eq \"AzureAD\""
+            }
+        }
+    },
+    "grantControls": {
+        "operator": "OR",
+        "builtInControls": [
+            "compliantDevice"
+        ]
+    },
+    "description": "Foundation Cyber Essentials pack policy."
+}

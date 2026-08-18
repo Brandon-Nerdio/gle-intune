@@ -1,0 +1,42 @@
+{
+    "@odata.type": "#microsoft.graph.conditionalAccessPolicy",
+    "displayName": "CE-F-UAC-CA-008 - Grant Access to All Apps for Hybrid devices [Foundation] [Report-only]",
+    "state": "enabledForReportingButNotEnforced",
+    "conditions": {
+        "applications": {
+            "includeApplications": [
+                "All"
+            ]
+        },
+        "users": {
+            "includeUsers": [
+                "All"
+            ],
+            "excludeGroups": [
+                "{$GroupVars.BreakGlass}"
+            ]
+        },
+        "clientAppTypes": [
+            "all"
+        ],
+        "platforms": {
+            "includePlatforms": [
+                "windows"
+            ],
+            "excludePlatforms": [
+                "android",
+                "iOS",
+                "windowsPhone",
+                "macOS",
+                "linux"
+            ]
+        }
+    },
+    "grantControls": {
+        "operator": "OR",
+        "builtInControls": [
+            "domainJoinedDevice"
+        ]
+    },
+    "description": "Foundation Cyber Essentials pack policy."
+}

@@ -1,0 +1,13 @@
+{
+    "tags": [
+        "cyber-essentials-hardening",
+        "ce-hardening",
+        "cyber-essentials",
+        "ce",
+        "conditional-access",
+        "hardening",
+        "uac",
+        "cyber-essentials-hardening-enforced-ca"
+    ],
+    "description": "[Hardening] Enforced variant of 'CE-UAC-CA-004 - Require EntraID Joined and compliant device to access cloud apps for all users'. Applies its access controls when conditions match and can block or challenge sign-ins. Deploy only after validating the report-only counterpart."
+}
